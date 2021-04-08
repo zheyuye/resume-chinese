@@ -18,14 +18,17 @@ LaTex语法内容以及框架基本上参照[Htallone/myCV](https://github.com/H
 
 ### 效果示例
 
-<object data="resume.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="resume.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="resume.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+**纯享版:**
 
-![Image Title](resume.pdf)
+![resume](https://zheyuye-image-1257819557.cos.ap-shanghai.myqcloud.com/img/resume.png)
 
-纯享版: [resume.pdf]) 
 
-有照片版:  [resume-photo.pdf](resume-photo.pdf) 
+**照片版:**
+
+页眉个人照片+学校logo:
+
+![head](https://zheyuye-image-1257819557.cos.ap-shanghai.myqcloud.com/img/image-20210408152658206.png)
+
+页脚个人信息:
+
+![footer](https://zheyuye-image-1257819557.cos.ap-shanghai.myqcloud.com/img/image-20210408152718217.png)
