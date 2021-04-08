@@ -1,0 +1,109 @@
+%%%% 参考了https://www.wondercv.com/的模板
+
+\documentclass[11pt]{article}
+
+% disable indent globally
+\setlength{\parindent}{0pt}
+% some general improvements, defines the XeTeX logo
+\usepackage{xltxtra}
+% use hyperlink for email and url
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage{url}
+\urlstyle{tt}
+
+\usepackage{xcolor}
+%%%% 统一一种颜色，IC蓝
+\definecolor{CVBlue}{RGB}{0,62,116}
+
+%%% \widthof[]{} 用于特殊对齐时用到
+\usepackage{calc}
+
+%%%% 利用tikz来定位照片和学校Logo
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% loading fonts
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\CJKsetecglue{} %% 取消中文与数字之间间隙
+
+
+%%%%% 字体需要自己下载安装，注意版权问题
+%%%%% linux系统只需要字体路径就行了，如下
+% % Main document font
+\setmainfont[
+    Path = Font/,
+  Extension = .otf ,
+  BoldFont = HelveticaNeueLTPro-Md.otf ,
+]{HelveticaNeueLTPro-Roman.otf}
+
+\setCJKmainfont[
+Path = Font/,
+  Extension = .ttf ,
+BoldFont=Pro_GB18030DemiBold.ttf,
+]{Pro_GB18030.ttf}
+
+\usepackage{relsize}
+\usepackage{xspace}
+\protected\def\Cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.28ex}{\relsize{-1}++}}\xspace}
+
+% use fontawesome
+\usepackage{fontawesome}
+
+\usepackage[
+	a4paper,
+	left=1.2cm,
+	right=1.2cm,
+	top=1.5cm,
+	bottom=1cm,
+	nohead
+]{geometry}
+
+\renewcommand{\baselinestretch}{1.2} %定义行间距1.2
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\setlist{noitemsep} % removes spacing from items but leaves space around the whole list
+%\setlist{nosep} % removes all vertical spacing within and around the list
+\setlist[itemize]{topsep=0.25em, leftmargin=*}
+\setlist[enumerate]{topsep=0.25em, leftmargin=*}
+
+
+
+\titleformat{\section}         % Customise the \section command
+  {\large\bfseries\raggedright} % Make the \section headers large (\Large),
+                               % small capitals (\scshape) and left aligned (\raggedright)
+  {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
+  {}                           % Can be used to insert code before the heading
+  [{\color{CVBlue}\titlerule}]                 % Inserts a horizontal line after the heading
+\titlespacing*{\section}{0cm}{*1.6}{*1.2}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+%%%% 利用tikz来定位照片，部分招聘单位可能需要“以貌取人”
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = north east] at ($(current page.north east)+(-1.5cm,-1cm)$) {\includegraphics[height=3.5cm]{avatar}};
+\end{tikzpicture}%
+%%%% 利用tikz来定位学校Logo，这部分没有遵守College logo positioning
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = north west] at ($(current page.north west)+(0.45cm, -0.45cm)$) {\includegraphics[width=7cm]{imperial.png}};
+\end{tikzpicture}%
+%%%% 利用tikz来定位页脚栏，电子版简历使用，黑白纸质打印效果可能并不好。这里只在第一页显示，如果需要每页都有，页脚或者background中加入。
+\input{footer}
+%tikzpicture环境很敏感，注释周围的空格、空行都会引起水平距离或垂直距离的变化，
+%
+
+\vspace{3ex}
+\centerline{\LARGE\bfseries{卷不过大家}}
+\vspace{1ex}
+\centerline{\normalsize{\faPhone\ 13xxx-xxx-xxx \quad \faEnvelopeO\ \href{zheyu.ye18@alumni.imperial.ac.uk}{zheyu.ye18@alumni.imperial.ac.uk}}}
+\vspace{1.5ex}
+
+\input{body}
+
+%%%% 如果多页简历，可以手动在适当位置插入 \newpage 或者 \clearpage 开始新一页
+\input{footer}
+\end{document}
