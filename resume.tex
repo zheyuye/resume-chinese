@@ -1,91 +1,9 @@
-%%%% 参考了https://www.wondercv.com/的模板
-
-\documentclass[11pt]{article}
-
-% disable indent globally
-\setlength{\parindent}{0pt}
-% some general improvements, defines the XeTeX logo
-\usepackage{xltxtra}
-% use hyperlink for email and url
-\usepackage{hyperref}
-\usepackage{url}
-\hypersetup{
-    % colorlinks=true,
-    % linkcolor=cyan,
-    % urlcolor=cyan,
-    % citecolor=cyan,
-}
-
-\urlstyle{tt}
-
-\usepackage{xcolor}
-%%%% 统一一种颜色，偏蓝色，用于section下划线和fontawesome，这颜色是从一个北航Logo上取的
-\definecolor{CVBlue}{RGB}{0,62,116}
-
-%%% \widthof[]{} 用于特殊对齐是用到
-\usepackage{calc}
-
-
-% loading fonts
-\usepackage{fontspec}
-\usepackage{xeCJK}
-\CJKsetecglue{} %% 取消中文与数字之间间隙
-
-\setmainfont[
-    Path = Font/,
-  Extension = .otf ,
-  BoldFont = HelveticaNeueLTPro-Md.otf ,
-]{HelveticaNeueLTPro-Roman.otf}
-
-\setCJKmainfont[
-Path = Font/,
-  Extension = .ttf ,
-BoldFont=Pro_GB18030DemiBold.ttf,
-]{Pro_GB18030.ttf}
-
-
-\usepackage{relsize}
-\usepackage{xspace}
-\protected\def\Cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.28ex}{\relsize{-1}++}}\xspace}
-
-% use fontawesome
-\usepackage{fontawesome}
-% \newfontfamily{\FA}{[FontAwesome.otf]}
-
-\usepackage[
-	a4paper,
-	left=1.2cm,
-	right=1.2cm,
-	top=1.5cm,
-	bottom=1cm,
-	nohead
-]{geometry}
-\renewcommand{\baselinestretch}{1.2} %定义行间距1.2
-
-\usepackage{titlesec}
-\usepackage{enumitem}
-\setlist{noitemsep} % removes spacing from items but leaves space around the whole list
-% \setlist{nosep} % removes all vertical spacing within and around the list
-\setlist[itemize]{topsep=0.25em, leftmargin=*}
-\setlist[enumerate]{topsep=0.25em, leftmargin=*}
-
-\titleformat{\section}         % Customise the \section command
-  {\large\bfseries\raggedright} % Make the \section headers large (\Large),
-                               % small capitals (\scshape) and left aligned (\raggedright)
-  {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
-  {}                           % Can be used to insert code before the heading
-  [{\color{CVBlue}\titlerule}]                 % Inserts a horizontal line after the heading
-\titlespacing*{\section}{0cm}{*1.6}{*1.2}
-
-
-
+\documentclass{setting}
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
-\centerline{\LARGE\bfseries{卷不过大家}}
-\vspace{1ex}
-\centerline{\normalsize{\faPhone\ 13xxx-xxx-xxx \quad \faEnvelopeO\ \href{mailto:zheyu.ye18@alumni.imperial.ac.uk}{zheyu.ye18@alumni.imperial.ac.uk} \quad \faHome\  \href{ http://blog.yours.me}{ http://blog.yours.me}}}
-
+\name{Dr. Henry Jekyll}
+\contactInfo{13xxx-xxx-xxx}{zheyu.ye18@alumni.imperial.ac.uk}{http://blog.yours.me}
 \input{body}
 
 
