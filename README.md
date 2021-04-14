@@ -22,9 +22,6 @@ LaTex语法内容以及框架基本上参照[Htallone/myCV](https://github.com/H
 0. 直接使用[Overleaf模板](https://www.overleaf.com/latex/templates/resume-chinese/vbrmnfrgbscv), 开始你的编辑
 
 
-
-P.S. Overleaf Link还未能及时更新
-
 ###  宏(newcommand)
 
 - `\name`: 姓名
