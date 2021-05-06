@@ -2,11 +2,19 @@
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
+%%%% 利用tikz来定位照片
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = north east] at ($(current page.north east)+(-1.5cm,-1cm)$) {\includegraphics[height=3.5cm]{avatar}};
+\end{tikzpicture}%
+%%%% 利用tikz来定位学校Logo，这部分没有遵守College logo positioning
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = north west] at ($(current page.north west)+(0.45cm, -0.45cm)$) {\includegraphics[width=7cm]{imperial.png}};
+\end{tikzpicture}
+
 \name{Dr. Jekyll}
 \basicContactInfo{13xxx-xxx-xxx}{zheyu.ye18@alumni.imperial.ac.uk}
 
 \input{body}
 
-%%%% 如果多页简历，可以手动在适当位置插入 \newpage 或者 \clearpage 开始新一页
 \input{footer}
 \end{document}
